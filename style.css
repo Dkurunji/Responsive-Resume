@@ -1,0 +1,643 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+/* html {
+  scroll-behavior: smooth;
+} */
+
+body {
+  box-sizing: border-box;
+  font-size: 30px;
+}
+
+/* common styles */
+.text-center {
+  text-align: center;
+}
+
+/* Body Header ---------------------------------------------------------------------------------------*/
+#body-header {
+  height: 65vh;
+  background-image: url("images/headerBackground.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* nav menu items*/
+.checkbtn {
+  font-size: 3rem;
+  color: white;
+  float: right;
+  padding: 10px;
+  line-height: 3rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+#check2 {
+  display: none;
+}
+
+/* Horizontal Lists of header */
+.horizonal-list-items {
+  list-style-type: none;
+  padding: 10px;
+}
+
+/* Horizontal list item in nav items */
+.horizonal-list-items li {
+  display: inline-block;
+  margin: 0 8px;
+}
+
+/* anchors in horizontal list item */
+.horizonal-list-items li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* while hovering over anchors*/
+.horizonal-list-items li a:hover {
+  color: #efe8e5;
+}
+.nav-menu li a {
+  transition: color 0.5s, border-bottom 0.5s;
+}
+.nav-menu li a:hover {
+  border-bottom: 4px solid rgb(252, 249, 249);
+}
+
+/* My name and social icons in header section-------------------------------------------------------*/
+
+#name-social-container {
+  margin-top: 15vh;
+  backface-visibility: hidden;
+}
+
+#my-name {
+  font-size: 3rem;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.2rem;
+  animation: movedown 4s 1s 1 ease-in-out;
+}
+
+.social-icons {
+  animation: moveup 4s 1s 1 ease-in-out;
+}
+
+.social-icons li {
+  border-radius: 50%;
+}
+
+/* hovering effect while hovering over social-icons-list items*/
+.social-icons li:hover {
+  /* box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color]; */
+  box-shadow: 0px 0px 4px 4px rgb(193 120 206 / 65%);
+}
+
+/* Social icon image */
+.social-icons li a img {
+  width: 1rem;
+  padding: 10px;
+}
+
+@keyframes moveup {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes movedown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(100px);
+  }
+}
+
+/* common for all sections-------------------------------------------------------*/
+
+section {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+section:nth-child(2n) {
+  background-color: #9e9b9b29;
+}
+section:nth-child(2n + 1) {
+  background-color: white;
+}
+
+.section-heading {
+  width: auto;
+  margin: 10px auto;
+  font-weight: 500;
+  padding: 20px 10px 10px;
+  animation: moveInRight 5s 3s infinite ease-out;
+}
+
+.section-heading span {
+  font-size: 40px;
+  color: #2857a4;
+  display: inline-block;
+  padding-top: 10px;
+  margin-right: 0.5rem;
+}
+
+.mb50px {
+  margin-bottom: 50px;
+}
+
+/* section:target {
+  background-color: cyan;
+} */
+
+/* about section(includes about description and profile picture) ----------------------------------*/
+
+/* about section container */
+#about {
+  height: auto;
+  width: 100%;
+  position: relative;
+}
+
+/* profile picture inside about section */
+#profile-pic {
+  height: 12rem;
+  width: 12rem;
+  margin: auto;
+}
+
+#profile-pic img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 4px solid rgb(255, 252, 252);
+  margin-top: -17vh;
+  box-shadow: 1px 1px 10px 2px lightgrey;
+  /* background-size: cover;
+  background-position: center;
+  clip-path: circle(50% at 50% 50%);
+  
+  */
+}
+
+#about p {
+  width: 70%;
+  padding: 10px;
+  margin: auto;
+  margin-top: -40px;
+  text-align: justify;
+  color: grey;
+  line-height: 28px;
+  font-size: 1.2rem;
+}
+
+/* skills section -------------------------------------------------------*/
+
+.skills-display {
+  /* width: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; */
+  width: 75%;
+  padding: 10px;
+  margin-bottom: 1px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.skill-progress {
+  width: 10rem;
+  height: 2rem;
+  background-color: lightgrey;
+  overflow: hidden;
+  border-radius: 1rem;
+  margin: 30px;
+}
+
+.skill-progress div {
+  border-radius: 10px;
+  text-align: center;
+  vertical-align: baseline;
+}
+
+.skill-progress > div {
+  border-radius: 20px 0px 0px 20px;
+  box-shadow: 1px 1px 7px 2px #989882;
+}
+
+.skill-name {
+  height: inherit;
+}
+
+.skill-name span {
+  font-size: 0.8rem;
+  color: white;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -5px;
+}
+
+/* progress percentage classes */
+.eighty-five-percent {
+  height: inherit;
+  width: 85%;
+}
+
+.eighty-percent {
+  height: inherit;
+  width: 80%;
+}
+
+.sixty-percent {
+  height: inherit;
+  width: 50%;
+}
+.fifty-percent {
+  height: inherit;
+  width: 50%;
+}
+
+/* progress bar color classes */
+.bc-blue {
+  background-color: blue;
+}
+.bc-orange {
+  background-color: orange;
+}
+.bc-red {
+  background-color: rgb(255, 0, 140);
+}
+.bc-green {
+  background-color: rgb(0, 255, 76);
+}
+.bc-violet {
+  background-color: #7d2f97;
+}
+.bc-grey {
+  background-color: #3c3c54;
+}
+.bc-brown {
+  background-color: #762d2d;
+}
+
+.mb-saphireblue {
+  background-color: #259b8f;
+}
+
+/* work experience section -------------------------------------------------------*/
+
+/* timeline */
+
+.timeline {
+  position: relative;
+  width: 75%;
+  /* border: 2px solid black; */
+}
+
+.timeline-box {
+  width: 40%;
+  min-height: 150px;
+  /* border: 2px solid black; */
+  margin: 5px;
+  position: relative;
+  left: 5%;
+}
+
+/* making even timeline boxes to move right */
+.timeline-box:nth-child(2n) {
+  left: 53%;
+}
+
+/* making circle to indicate the stops in timeline devider */
+.timeline-box:nth-child(2n)::after {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #9e9e9e;
+  position: absolute;
+  top: 12%;
+  left: -9.5%;
+  z-index: 10;
+}
+.timeline-box:nth-child(2n + 1)::after {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #9e9e9e;
+  position: absolute;
+  top: 12%;
+  right: -14%;
+  z-index: 10;
+}
+
+/* timeline devider btwn timeline boxes */
+.timeline-divider {
+  width: 0;
+  height: 85%;
+  border: 3px solid #cabcbca9;
+  position: absolute;
+  left: 50%;
+  top: 5%;
+}
+
+/* timeline airplane traveller along timeline devider */
+.timeline-traveller {
+  position: sticky;
+  top: 10%;
+  transform: rotate(90deg);
+  z-index: 100;
+  font-size: 1.7rem;
+  color: #1765e4;
+  opacity: 1;
+}
+
+/* comapny info */
+
+.company-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* changing flex direction of company-info to row reverse for even timeline-box */
+.timeline-box:nth-child(2n) > .company-info {
+  flex-direction: row-reverse;
+  text-align: start;
+}
+
+/* aligning text to start and end in case of role info for even and odd */
+.timeline-box:nth-child(2n) > .company-info > .role-info {
+  text-align: left;
+}
+.timeline-box:nth-child(2n + 1) > .company-info > .role-info {
+  text-align: right;
+}
+
+.company-info img {
+  width: 100px;
+  height: 100px;
+}
+
+.role-info span {
+  display: block;
+}
+.fs-1 {
+  font-size: 1.4rem;
+}
+.fs-2 {
+  font-size: 1.2rem;
+}
+.fs-3 {
+  font-size: 0.6rem;
+}
+
+.justify-content {
+  text-align: justify;
+}
+
+.role-heading {
+  color: #0048bc;
+  font-weight: 900;
+}
+.checkbtn {
+  z-index: 100;
+}
+
+/* media queries */
+
+@media screen and (max-width: 768px) {
+  .timeline-box {
+    left: 15%;
+    width: 80%;
+    margin-bottom: 50px;
+    top: 80px;
+    text-align: center;
+  }
+
+  .horizonal-list-items li a {
+    font-size: 1rem;
+  }
+
+  .timeline-box:nth-child(2n) {
+    left: 15%;
+  }
+
+  .timeline-divider {
+    left: 8%;
+  }
+
+  .timeline-box:nth-child(2n) > .company-info {
+    flex-direction: row;
+    text-align: end;
+  }
+  .timeline-box:nth-child(2n) > .company-info > .role-info {
+    text-align: right;
+  }
+
+  .timeline-divider {
+    height: 90%;
+  }
+
+  .timeline-box:nth-child(2n + 1)::after {
+    left: -11%;
+  }
+  .timeline-box:nth-child(2n)::after {
+    left: -11%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .checkbtn {
+    display: block;
+  }
+  .nav-menu li a {
+    font-size: 1.3rem;
+    transform: all 0.5s ease;
+  }
+  .nav-menu li a:hover {
+    border-bottom: 0;
+  }
+  .nav-menu li:hover {
+    transform: scale(1.05);
+  }
+
+  #my-name {
+    font-size: 2rem;
+    margin: auto;
+    display: inline;
+  }
+
+  .nav-menu {
+    right: 0;
+    width: 40%;
+    height: 65vh;
+    background: #5ccab64f;
+    z-index: 1000000;
+    /* transform: rotate(-20deg); */
+  }
+  .nav-menu li {
+    display: block;
+    background-color: #27b8b8;
+    margin: 13px;
+    border-radius: 10px;
+  }
+
+  #check:checked ~ .nav-menu {
+    visibility: collapse;
+  }
+
+  #name-social-container {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    text-align: center;
+    z-index: -1;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  #name-social-container {
+    left: 15%;
+  }
+  .fs-1 {
+    font-size: 1rem;
+  }
+  .fs-2 {
+    font-size: 1rem;
+  }
+  .fs-3 {
+    font-size: 0.4rem;
+  }
+
+  .justify-content {
+    text-align: justify;
+  }
+
+  .section-heading span {
+    font-size: 30px;
+    color: #2857a4;
+    display: inline-block;
+    padding-top: 10px;
+    margin-right: 0.5rem;
+  }
+}
+
+/* education section -----------------------------------------------------------*/
+
+/* education container  */
+#education-container {
+  width: 75%;
+  /* border: 2px solid black; */
+  position: relative;
+}
+
+/* Every other styles are linked to timeline-box*/
+
+/* portfolio section -------------------------------------------------------*/
+
+#portfolio-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.portfolio-item-container {
+  width: 15rem;
+  height: 15rem;
+  padding: 10px;
+  margin: 10px 50px;
+  position: relative;
+  box-shadow: 0 0 7px 4px rgb(190, 200, 201);
+}
+/* transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay]; */
+.portfolio-item-container:hover {
+  display: block;
+  transform: scale(1.05);
+  width: 15rem;
+  height: 15rem;
+  background-color: #80808078;
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+}
+
+.portfolio-item-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio-project-description {
+  font-size: 1rem;
+  color: transparent;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.portfolio-item-container:hover .portfolio-project-description {
+  color: rgb(148 81 143);
+  transition: all 1s ease-in-out;
+}
+
+/* contact section -------------------------------------------------------*/
+
+/* added in separate file called contsct.css file */
+
+/* additional features like reveal sections */
+
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
