@@ -464,8 +464,8 @@ section:nth-child(2n + 1) {
 }
 
 .portfolio-item-container {
-  width: 15rem;
-  height: 15rem;
+  width: 14rem;
+  height: 14rem;
   margin: 10px 8vw;
   position: relative;
   box-shadow: 0 0 7px 4px rgb(190, 200, 201);
@@ -541,12 +541,27 @@ section:nth-child(2n + 1) {
 /* overlay --------------------------------*/
 
 #overlay-container {
-  background-color: #762d2d;
-  padding: 30px;
+  background-color: #052620;
   height: 100vh;
   display: none;
   position: fixed;
-  top: 0;
+  padding: 10px;
+  top: 0px;
+  /* display: flex; */
+
+  /* position: relative; */
+}
+
+#overlay-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+#overlay-container span {
+  position: relative;
+  top: 0px;
+  left: 85%;
 }
 
 .overlay-menu {
@@ -555,6 +570,8 @@ section:nth-child(2n + 1) {
 
 .overlay {
   margin: 10px;
+  padding: 10px;
+  font-size: 1.5rem;
 }
 
 .overlay a {
@@ -572,13 +589,51 @@ section:nth-child(2n + 1) {
   height: 2rem;
   text-align: center;
   display: none;
+  top: 0px;
+}
+
+/* scroll up --------------- */
+
+/* #scroll-up {
+  position: sticky;
+  bottom: 50px;
+  z-index: 10;
+  background-color: rgb(229, 235, 224);
+  display: inline-block; */
 }
 
 /* media queries */
 
+@media screen and (max-width: 1390px) {
+  .portfolio-item-container {
+    width: 14rem;
+    height: 14rem;
+    margin: 10px 6vw;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .portfolio-item-container {
+    width: 14rem;
+    height: 14rem;
+    margin: 10px 6vw;
+  }
+}
+@media screen and (max-width: 1125px) {
+  .portfolio-item-container {
+    width: 14rem;
+    height: 14rem;
+    margin: 10px 4vw;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .skills-display {
     width: 80%;
+  }
+  .portfolio-item-container {
+    width: 13rem;
+    height: 13rem;
+    margin: 10px 3vw;
   }
 }
 
@@ -627,15 +682,21 @@ section:nth-child(2n + 1) {
     width: 10rem;
     margin: auto;
   }
-}
 
-@media screen and (max-width: 730px) {
   .portfolio-item-container {
-    width: 12rem;
-    height: 12rem;
+    width: 11rem;
+    height: 11rem;
+    margin: 10px 3vw;
   }
 }
 
+@media screen and (max-width: 650px) {
+  .portfolio-item-container {
+    width: 10rem;
+    height: 10rem;
+    margin: 10px 2.5vw;
+  }
+}
 @media (max-width: 580px) {
   #about p {
     font-size: 1.4rem;
@@ -643,6 +704,14 @@ section:nth-child(2n + 1) {
 
   .skills-display {
     width: auto;
+  }
+}
+
+@media screen and (max-width: 565px) {
+  .portfolio-item-container {
+    width: 10rem;
+    height: 10rem;
+    margin: 10px 2vw;
   }
 }
 
@@ -709,6 +778,29 @@ section:nth-child(2n + 1) {
   #name-social-container {
     margin-top: 15vh;
   }
+
+  .portfolio-item-container {
+    width: 9rem;
+    height: 9rem;
+    margin: 10px 2vw;
+  }
+}
+
+@media (max-width: 460px) {
+  .skill-progress {
+    margin: 20px;
+  }
+}
+@media (max-width: 420px) {
+  .skill-progress {
+    margin: 12px;
+  }
+}
+@media (max-width: 388px) {
+  .skill-progress {
+    width: 9rem;
+    margin: 10px;
+  }
 }
 
 @media (max-height: 2000px) {
@@ -750,7 +842,11 @@ section:nth-child(2n + 1) {
     margin-top: 10vh;
   }
 }
-
+@media (max-height: 680px) {
+  #name-social-container {
+    margin-top: 6vh;
+  }
+}
 @media (max-height: 628px) {
   #body-header {
     height: 55vh;
@@ -780,10 +876,6 @@ section:nth-child(2n + 1) {
     margin-top: 5vh;
   }
 
-  /* #my-name {
-    font-size: 1.4rem;
-  } */
-
   #my-name {
     margin: 0;
   }
@@ -796,6 +888,12 @@ section:nth-child(2n + 1) {
 
   #profile-pic img {
     margin-top: -80px;
+  }
+
+  .overlay {
+    margin: 8px;
+    padding: 8px;
+    font-size: 1.5rem;
   }
 }
 
@@ -819,6 +917,7 @@ section:nth-child(2n + 1) {
     margin-top: -65px;
   }
 }
+
 @media (max-height: 460px) {
   #name-social-container {
     margin-top: 10vh;
@@ -827,7 +926,14 @@ section:nth-child(2n + 1) {
   #my-name {
     font-size: 1.5rem;
   }
+
+  .overlay {
+    margin-bottom: 5px;
+    padding: 5px;
+    font-size: 1.5rem;
+  }
 }
+
 @media (max-height: 410px) {
   #name-social-container {
     margin-top: 11vh;
@@ -840,6 +946,31 @@ section:nth-child(2n + 1) {
 
   #menu-bar {
     display: block;
+  }
+
+  .overlay {
+    margin: 6px;
+    padding: 6px;
+    font-size: 1.5rem;
+  }
+}
+@media (max-height: 360px) {
+  .overlay {
+    margin-bottom: 2px;
+    padding: 2px;
+    font-size: 1.5rem;
+  }
+}
+@media (max-height: 320px) {
+  .overlay {
+    margin-bottom: 0px;
+    /* padding: 2px; */
+    font-size: 1.3rem;
+  }
+}
+@media (max-height: 300px) {
+  #name-social-container {
+    margin-top: 1vh;
   }
 }
 
@@ -872,9 +1003,17 @@ section:nth-child(2n + 1) {
   #my-name {
     font-size: 1rem;
   }
+  #name-social-container {
+    margin-top: 10vh;
+  }
 }
 @media (max-width: 300px) {
   .section-heading span {
     font-size: 1.2rem;
+  }
+}
+@media (max-width: 280px) {
+  #name-social-container {
+    margin-top: 10vh;
   }
 }

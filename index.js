@@ -1,17 +1,36 @@
 'use strict';
 
 // nav menu toggling----------------------------
-const navMenu = document.querySelector('.nav-menu');
+const navMenu = document.getElementById('menu-bar');
+const overlay = document.getElementById("overlay-container");
+const cross = document.getElementById("cross");
+const overlayMenu = document.querySelectorAll('.overlay');
+   
 
-navMenu .addEventListener("click",function(e) {       
-       document.getElementById("check").checked = true;
+navMenu.addEventListener("click", function (e) {
+     overlay.style.display = 'block';
+    navMenu.style.display = 'none';
 });
+
+cross.addEventListener("click", function (e) {
+    overlay.style.display = 'none';
+    navMenu.style.display = 'block';
+});
+
+for (let i = 0; i < overlayMenu.length; i++){
+    overlayMenu[i].addEventListener('click', function (e) {
+          overlay.style.display = 'none';
+    navMenu.style.display = 'block';
+    });
+}
+
+
+
 
 
 // smooth scrolling using jquery-----------------------------------
 
-var navMenus = document.querySelectorAll('.nav-menu a');
-console.log(navMenus)
+var navMenus = document.querySelectorAll('.smooth-scroll a');
 
     for (let i = 0; i < navMenus.length; i++){
         navMenus[i].addEventListener('click', function (e) {
