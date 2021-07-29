@@ -22,7 +22,7 @@ console.log(navMenus)
             
             let interval = setInterval(function () {
                 let targetSectionCoords = targetSection.getBoundingClientRect();
-                if (targetSectionCoords.top <= 150) {
+                if (targetSectionCoords.top <= 130) {
                     clearInterval(interval);
                     return;
                 }
@@ -83,7 +83,7 @@ function fillBars() {
             }
             currentWidth++;
             bar.style.width = currentWidth + '%';
-        },30)
+        },40)
     }     
 }
 

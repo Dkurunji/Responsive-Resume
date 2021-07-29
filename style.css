@@ -80,8 +80,7 @@ body {
 /* My name and social icons in header section-------------------------------------------------------*/
 
 #name-social-container {
-  margin-top: 15vh;
-  backface-visibility: hidden;
+  margin-top: 20vh;
 }
 
 #my-name {
@@ -174,7 +173,7 @@ section:nth-child(2n + 1) {
   margin: 10px auto;
   font-weight: 500;
   padding: 20px 10px 10px;
-  animation: moveInRight 5s 3s infinite ease-out;
+  /* animation: moveInRight 5s 3s 1 ease-out; */
 }
 
 .section-heading span {
@@ -214,7 +213,7 @@ section:nth-child(2n + 1) {
   width: 100%;
   border-radius: 50%;
   border: 4px solid rgb(255, 252, 252);
-  margin-top: -17vh;
+  margin-top: -100px;
   box-shadow: 1px 1px 10px 2px lightgrey;
   /* background-size: cover;
   background-position: center;
@@ -231,17 +230,13 @@ section:nth-child(2n + 1) {
   text-align: justify;
   color: grey;
   line-height: 28px;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
 }
 
 /* skills section -------------------------------------------------------*/
 
 .skills-display {
-  /* width: 40%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; */
-  width: 75%;
+  width: 70%;
   padding: 10px;
   margin-bottom: 1px;
   display: flex;
@@ -305,14 +300,14 @@ section:nth-child(2n + 1) {
 .bc-blue {
   background-color: blue;
 }
-.bc-orange {
-  background-color: orange;
+.bc-violet {
+  background-color: #6155ed;
 }
 .bc-red {
   background-color: rgb(255, 0, 140);
 }
-.bc-green {
-  background-color: rgb(0, 255, 76);
+.bc-purple {
+  background-color: rgb(196 0 255);
 }
 .bc-violet {
   background-color: #7d2f97;
@@ -449,7 +444,143 @@ section:nth-child(2n + 1) {
   z-index: 100;
 }
 
+/* education section -----------------------------------------------------------*/
+
+/* education container  */
+#education-container {
+  width: 75%;
+  /* border: 2px solid black; */
+  position: relative;
+}
+
+/* Every other styles are linked to timeline-box*/
+
+/* portfolio section -------------------------------------------------------*/
+
+#portfolio-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.portfolio-item-container {
+  width: 15rem;
+  height: 15rem;
+  margin: 10px 8vw;
+  position: relative;
+  box-shadow: 0 0 7px 4px rgb(190, 200, 201);
+  overflow: hidden;
+}
+/* transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay]; */
+.portfolio-item-container:hover {
+  display: block;
+  transform: scale(1.1);
+  background-color: #80808078;
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+}
+
+.portfolio-item-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio-project-description {
+  font-size: 1rem;
+  /* color: transparent; */
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+
+.know-more a {
+  background-color: #e3e2f0;
+  text-decoration: none;
+  padding: 5px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: none;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.portfolio-item-container:hover .portfolio-project-description {
+  color: #000000;
+  transition: all 1s ease-in-out;
+  display: block;
+  background-color: rgba(53, 187, 158, 0.555);
+}
+
+.portfolio-item-container:hover a {
+  display: block;
+}
+
+/* contact section -------------------------------------------------------*/
+
+/* added in separate file called contsct.css file */
+
+/* additional features like reveal sections */
+
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  /* transform: translateX(50%); */
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  transform: translateX(0);
+}
+
+/* overlay --------------------------------*/
+
+#overlay-container {
+  background-color: #762d2d;
+  padding: 30px;
+  height: 100vh;
+  display: none;
+  position: fixed;
+  top: 0;
+}
+
+.overlay-menu {
+  list-style-type: none;
+}
+
+.overlay {
+  margin: 10px;
+}
+
+.overlay a {
+  text-decoration: none;
+  color: white;
+}
+
+#menu-bar {
+  position: absolute;
+  background-color: rgba(233, 223, 223, 0.582);
+  padding: 0px 3px;
+  margin: 5px;
+  z-index: 1;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  display: none;
+}
+
 /* media queries */
+
+@media screen and (max-width: 900px) {
+  .skills-display {
+    width: 80%;
+  }
+}
 
 @media screen and (max-width: 768px) {
   .timeline-box {
@@ -490,54 +621,41 @@ section:nth-child(2n + 1) {
   .timeline-box:nth-child(2n)::after {
     left: -11%;
   }
+
+  #profile-pic {
+    height: 10rem;
+    width: 10rem;
+    margin: auto;
+  }
 }
 
-@media screen and (max-width: 580px) {
-  .checkbtn {
-    display: block;
+@media screen and (max-width: 730px) {
+  .portfolio-item-container {
+    width: 12rem;
+    height: 12rem;
   }
-  .nav-menu li a {
-    font-size: 1.3rem;
-    transform: all 0.5s ease;
-  }
-  .nav-menu li a:hover {
-    border-bottom: 0;
-  }
-  .nav-menu li:hover {
-    transform: scale(1.05);
+}
+
+@media (max-width: 580px) {
+  #about p {
+    font-size: 1.4rem;
   }
 
-  #my-name {
-    font-size: 2rem;
+  .skills-display {
+    width: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .horizonal-list-items li {
+    display: inline-block;
+    margin: 0 2px;
+  }
+
+  #profile-pic {
+    height: 9rem;
+    width: 9rem;
     margin: auto;
-    display: inline;
-  }
-
-  .nav-menu {
-    right: 0;
-    width: 40%;
-    height: 65vh;
-    background: #5ccab64f;
-    z-index: 1000000;
-    /* transform: rotate(-20deg); */
-  }
-  .nav-menu li {
-    display: block;
-    background-color: #27b8b8;
-    margin: 13px;
-    border-radius: 10px;
-  }
-
-  #check:checked ~ .nav-menu {
-    visibility: collapse;
-  }
-
-  #name-social-container {
-    position: absolute;
-    top: 20%;
-    left: 25%;
-    text-align: center;
-    z-index: -1;
   }
 }
 
@@ -566,78 +684,197 @@ section:nth-child(2n + 1) {
     padding-top: 10px;
     margin-right: 0.5rem;
   }
+  #my-name {
+    font-size: 2.5rem;
+  }
 }
 
-/* education section -----------------------------------------------------------*/
+@media (max-width: 480px) {
+  #my-name {
+    font-size: 2rem;
+  }
 
-/* education container  */
-#education-container {
-  width: 75%;
-  /* border: 2px solid black; */
-  position: relative;
+  #about p {
+    font-size: 1.2rem;
+  }
+
+  .nav-menu li {
+    display: none;
+  }
+
+  #menu-bar {
+    display: block;
+  }
+
+  #name-social-container {
+    margin-top: 15vh;
+  }
 }
 
-/* Every other styles are linked to timeline-box*/
-
-/* portfolio section -------------------------------------------------------*/
-
-#portfolio-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+@media (max-height: 2000px) {
+  #body-header {
+    height: 55vh;
+    background-size: cover;
+  }
 }
 
-.portfolio-item-container {
-  width: 15rem;
-  height: 15rem;
-  padding: 10px;
-  margin: 10px 50px;
-  position: relative;
-  box-shadow: 0 0 7px 4px rgb(190, 200, 201);
-}
-/* transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay]; */
-.portfolio-item-container:hover {
-  display: block;
-  transform: scale(1.05);
-  width: 15rem;
-  height: 15rem;
-  background-color: #80808078;
-  overflow: hidden;
-  transition: all 1s ease-in-out;
+@media (max-height: 1400px) {
+  #body-header {
+    height: 55vh;
+    background-size: cover;
+  }
 }
 
-.portfolio-item-container img {
-  width: 100%;
-  height: 100%;
+@media (max-height: 1280px) {
+  #body-header {
+    height: 50vh;
+    background-size: cover;
+  }
+
+  #name-social-container {
+    margin-top: 15vh;
+  }
+
+  #profile-pic img {
+    margin-top: -80px;
+  }
 }
 
-.portfolio-project-description {
-  font-size: 1rem;
-  color: transparent;
-  position: absolute;
-  left: 0;
-  top: 0;
+@media (max-height: 768px) {
+  #body-header {
+    height: 45vh;
+    background-size: cover;
+  }
+
+  #name-social-container {
+    margin-top: 10vh;
+  }
 }
 
-.portfolio-item-container:hover .portfolio-project-description {
-  color: rgb(148 81 143);
-  transition: all 1s ease-in-out;
+@media (max-height: 628px) {
+  #body-header {
+    height: 55vh;
+    background-size: cover;
+  }
+
+  #name-social-container {
+    margin-top: 10vh;
+  }
+
+  #my-name {
+    font-size: 2rem;
+  }
+
+  #profile-pic img {
+    margin-top: -80px;
+  }
 }
 
-/* contact section -------------------------------------------------------*/
+@media (max-height: 528px) {
+  #body-header {
+    height: 50vh;
+    background-size: cover;
+  }
 
-/* added in separate file called contsct.css file */
+  #name-social-container {
+    margin-top: 5vh;
+  }
 
-/* additional features like reveal sections */
+  /* #my-name {
+    font-size: 1.4rem;
+  } */
 
-.reveal {
-  position: relative;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: all 1s ease;
+  #my-name {
+    margin: 0;
+  }
+
+  #profile-pic {
+    height: 8rem;
+    width: 8rem;
+    margin: auto;
+  }
+
+  #profile-pic img {
+    margin-top: -80px;
+  }
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+@media (max-height: 480px) {
+  .social-icons {
+    display: none;
+    height: 0;
+  }
+
+  #name-social-container {
+    margin-top: 15vh;
+  }
+
+  #profile-pic {
+    height: 7rem;
+    width: 7rem;
+    margin: auto;
+  }
+
+  #profile-pic img {
+    margin-top: -65px;
+  }
+}
+@media (max-height: 460px) {
+  #name-social-container {
+    margin-top: 10vh;
+  }
+
+  #my-name {
+    font-size: 1.5rem;
+  }
+}
+@media (max-height: 410px) {
+  #name-social-container {
+    margin-top: 11vh;
+  }
+}
+@media (max-height: 380px) {
+  .nav-menu li {
+    display: none;
+  }
+
+  #menu-bar {
+    display: block;
+  }
+}
+
+@media (max-width: 450px) {
+  #my-name {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .section-heading span {
+    font-size: 1.8rem;
+  }
+
+  #profile-pic {
+    height: 7rem;
+    width: 7rem;
+    margin: auto;
+  }
+
+  #profile-pic img {
+    margin-top: -60px;
+  }
+}
+
+@media (max-width: 360px) {
+  .section-heading span {
+    font-size: 1.5rem;
+  }
+  #my-name {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 300px) {
+  .section-heading span {
+    font-size: 1.2rem;
+  }
 }
