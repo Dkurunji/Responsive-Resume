@@ -345,7 +345,8 @@ textarea.input {
   }
 
   .btn {
-    padding: 0.45rem 1.2rem;
+    padding: 0.5rem 0.8rem;
+    width: 80%;
   }
 
   .input {
@@ -383,7 +384,8 @@ textarea.input {
   }
 
   .btn {
-    padding: 0.3rem 0.9rem;
+    padding: 0.5rem 0.9rem;
+    width: 80%;
   }
   .form {
     width: 100%;
