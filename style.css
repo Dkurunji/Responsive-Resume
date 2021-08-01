@@ -400,6 +400,7 @@ section:nth-child(2n + 1) {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 /* changing flex direction of company-info to row reverse for even timeline-box */
@@ -547,8 +548,9 @@ section:nth-child(2n + 1) {
   height: 100vh;
   display: none;
   position: fixed;
-  padding: 10px;
+  padding: 15px;
   top: 0px;
+  transition: all 2s ease;
   /* display: flex; */
 
   /* position: relative; */
@@ -572,7 +574,7 @@ section:nth-child(2n + 1) {
 }
 
 .overlay {
-  margin: 10px;
+  margin: 10px 0;
   padding: 10px;
   font-size: 1.5rem;
 }
@@ -584,9 +586,14 @@ section:nth-child(2n + 1) {
 .overlay a:hover{
   background-color: rgba(255, 255, 255, 0.678);
   color: rgb(0, 0, 0);
-  padding: 2px;
+  padding: 1px;
   box-shadow: 0 0 4px 4px white;
   border-radius: 5px;
+  
+}
+
+.overlay a:hover .overlay{
+  margin-right: 0;
 }
 
 #menu-bar {
@@ -803,6 +810,10 @@ section:nth-child(2n + 1) {
     width: 9rem;
     height: 9rem;
     margin: 10px 2vw;
+  }
+
+  .portfolio-project-description {
+    font-size: 0.8rem;
   }
 }
 
